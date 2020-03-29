@@ -9,4 +9,5 @@ public interface StudentService {
 	int save(Student student);
 	List<Student> showAll();
 	Student validateStudent(Login login);
+	Student getStudentUpdate(Student student);
 }

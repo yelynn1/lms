@@ -109,8 +109,10 @@ public class InstructorController {
 				return modelAndView;
 			}			
 			else {
+				instructor = service.getInstructorUpdate(instructor);
 				modelAndView.addObject("courses",instructor.getCourses());
-				//modelAndView.addObject("instructor",instructor);
+				modelAndView.addObject("instructor",instructor);
+				request.getSession().setAttribute("instructor", instructor);
 				modelAndView.setViewName("instructorHome");
 				System.out.println("Showed Instructor Home Page");
 				return modelAndView;

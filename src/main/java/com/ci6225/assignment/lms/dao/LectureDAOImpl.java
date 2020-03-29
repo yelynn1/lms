@@ -4,6 +4,7 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.net.URLEncoder;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.HibernateTemplate;
@@ -37,7 +38,7 @@ public class LectureDAOImpl implements LectureDAO {
 			try {
 				byte[] bytes = file.getBytes();
 
-				File dir = new File("upload");
+				File dir = new File("tomcat\\webapps\\lms\\upload");
 				if (!dir.exists())
 					dir.mkdirs();
 
@@ -47,12 +48,26 @@ public class LectureDAOImpl implements LectureDAO {
 						new FileOutputStream(serverFile));
 				stream.write(bytes);
 				stream.close();
-				String url = serverFile.getAbsolutePath();
+				String url = "/lms/upload/" + name;
 				return url;
 			} 
 			catch (Exception e) {
 				return null;
 			}
+	}
+
+	@Override
+	public void deleteLecture(int course_id, Lecture lecture) {
+		List<Lecture> lectures= (List<Lecture>) hibernateTemplate.get(Course.class, course_id).getLectures();
+		lectures.remove(lecture);
+		hibernateTemplate.delete(lecture);
+		
+	}
+
+	@Override
+	public Lecture getLecture(int id) {
+		return hibernateTemplate.get(Lecture.class, id);
+		
 	}
 
 }

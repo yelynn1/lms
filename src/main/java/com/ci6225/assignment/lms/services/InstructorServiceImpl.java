@@ -55,4 +55,10 @@ public class InstructorServiceImpl implements InstructorService {
 		return dao.getInstructorCourses(id);
 	}
 
+	@Override
+	@Transactional
+	public Instructor getInstructorUpdate(Instructor instructor) {
+		return dao.getInstructor(instructor.getId());
+	}
+
 }

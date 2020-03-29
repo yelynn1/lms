@@ -68,4 +68,10 @@ public class InstructorDAOImpl implements InstructorDAO {
 		return courses;
 	}
 
+	@Override
+	public Instructor getInstructor(int id) {
+		Instructor instructor = (Instructor) hibernateTemplate.get(Instructor.class, id);
+		return instructor;
+	}
+
 }

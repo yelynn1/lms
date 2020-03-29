@@ -59,8 +59,10 @@
 		<property name="maxUploadSize" value="10000000" />
 
 	</bean>
-		
-	<bean
+	
+	
+	
+    <bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		name="viewResolver">
 		<property name="prefix">
@@ -71,6 +73,8 @@
 		</property>
 
 	</bean>
+	
+          
 	
 	
 		

@@ -48,4 +48,12 @@ public class LectureServiceImpl implements LectureService {
 		dao.save(lecture);
 		
 	}
+
+	@Override
+	@Transactional
+	public void delete(int course_id, int lecture_id) {
+		Lecture lecture = dao.getLecture(lecture_id);
+		dao.deleteLecture(course_id, lecture);
+		
+	}
 }

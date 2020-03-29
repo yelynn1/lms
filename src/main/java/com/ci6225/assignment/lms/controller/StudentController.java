@@ -92,6 +92,8 @@ public class StudentController {
 			return modelAndView;
 		}			
 		else {
+			student = service.getStudentUpdate(student);
+			request.getSession().setAttribute("student", student);
 			modelAndView.addObject("student",student);
 			modelAndView.setViewName("studentHome");
 			System.out.println("Showed Student's Home Page");

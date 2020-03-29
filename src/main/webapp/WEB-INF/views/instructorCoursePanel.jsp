@@ -69,7 +69,7 @@
 	                <td>${lecture.description}</td>
 	                <td>${lecture.date}</td>
 	                <td><a class="btn btn-link" href="${lecture.link}" target="popup" onclick="window.open(this.href,'popup','width=600,height=600'); return false;">Link</a></td>
-	                
+	                <td><a class="btn btn-danger" href="delLecture/${lecture.id}">Delete</a></td>
 	            </tr>
         	</c:forEach>
       

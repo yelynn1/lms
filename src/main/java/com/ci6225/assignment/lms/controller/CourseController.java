@@ -72,7 +72,7 @@ public class CourseController {
 		ModelAndView modelAndView = new ModelAndView();
 		//course.setInstructor_id(instructor.getId());
 		service.save(course,instructor);
-		modelAndView.setViewName("courseCreate");
+		modelAndView.setViewName("redirect:/instructorHome");
 		System.out.println(course);
 		return modelAndView;
 	}

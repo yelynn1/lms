@@ -43,8 +43,8 @@ public class StudentDAOImpl implements StudentDAO {
 	}
 
 	@Override
-	public Student getStudent(String username) {
-		Student student=(Student)hibernateTemplate.get(Student.class,username);  
+	public Student getStudent(int id) {
+		Student student=(Student)hibernateTemplate.get(Student.class,id);  
 	    return student; 
 	}
 

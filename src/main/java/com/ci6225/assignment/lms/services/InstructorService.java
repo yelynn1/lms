@@ -11,4 +11,5 @@ public interface InstructorService {
 	List<Instructor> showAll();
 	Instructor validateInstructor(Login login);
 	List<Course> getCourses(int id);
+	Instructor getInstructorUpdate(Instructor instructor);
 }
